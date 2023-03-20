@@ -49,6 +49,39 @@ console.log("Proje açıldı!");
 
 /* Kodlar Buradan aşağıya */
 
-const multipleSelections = document.querySelectorAll("a");
-console.log(multipleSelections);
-asdasd;
+const multipleSelections = document.querySelectorAll("nav a");
+multipleSelections[0].textContent = "Servisler";
+multipleSelections[1].textContent = "Ürünler";
+multipleSelections[2].textContent = "Vizyon";
+multipleSelections[3].textContent = "Özellikler";
+multipleSelections[4].textContent = "Hakkımızda";
+multipleSelections[5].textContent = "İletişim";
+
+for (let i = 0; i < multipleSelections.length; i++) {
+  multipleSelections[i].setAttribute("class", "italic");
+}
+
+const mySelection = document.querySelector(".cta h1");
+mySelection.textContent = "Bu DOM Mükemmel";
+
+const buttonText = document.querySelector(".cta button");
+buttonText.textContent = "Başlayın";
+
+const logoImg = document.querySelector("#logo-img");
+logoImg.setAttribute("src", "http://localhost:9000/img/logo.png");
+
+const values = Object.values(siteContent["ana-içerik"]);
+const mainText = document.querySelectorAll(".text-content h4, .text-content p");
+for (let i = 0; i < mainText.length; i++) {
+  mainText[i].textContent = values[i];
+}
+
+const valuesContact = Object.values(siteContent["iletisim"]);
+const contactText = document.querySelectorAll(".contact h4, .contact p");
+for (let i = 0; i < contactText.length; i++) {
+  contactText[i].textContent = valuesContact[i];
+}
+
+const footerA = document.querySelector("footer a");
+footerA.textContent = Object.values(siteContent["footer"]);
+footerA.setAttribute("class", "bold");
