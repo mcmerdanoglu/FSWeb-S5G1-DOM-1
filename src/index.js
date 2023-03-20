@@ -85,3 +85,10 @@ for (let i = 0; i < contactText.length; i++) {
 const footerA = document.querySelector("footer a");
 footerA.textContent = Object.values(siteContent["footer"]);
 footerA.setAttribute("class", "bold");
+
+const ctaImg = document.querySelector("#cta-img");
+ctaImg.setAttribute("src", "http://localhost:9000/img/cta.png");
+
+const middleImg = document.querySelector("#middle-img");
+const accentImg = Object.values(siteContent["images"]);
+middleImg.setAttribute("src", accentImg[2]);
